@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
+</head>
+<body>
+    <h2>Ingresa información</h2>
+    <form action="{{ url_for('procesar_formulario') }}" method="post">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" name="nombre" required><br>
+
+        <label for="edad">Ingresa tu edad:</label>
+        <input type="number" name="edad" required><br>
+
+        <label for="cantidad_de_tarros">Ingresa la cantidad de tarros de pintura a comprar:</label>
+        <input type="number" name="cantidad_de_tarros" required><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+   
+{% if mensaje %}
+<div class="resultado">
+    {{ mensaje|safe }}
+</div>
+{% endif %}
+
+
+</body>
+</html>

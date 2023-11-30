@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
+    <title>Formulario</title>
+</head>
+<body>
+    <h2>Inicio de sesión</h2>
+    <form action="{{ url_for('procesar_login') }}" method="post">
+        <label for="">Ingresa tu nombre</label>
+        <input type="text" name="nombre" required><br>
+
+        <label for="">Ingresa tu contraseña</label>
+        <input type="text" name="contraseña" required><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+    {% if mensaje %}
+    <div class="mensaje-inicio-sesion">
+        <p>{{ mensaje }}</p>
+    </div>
+{% endif %}
+
+
+</div>
+</body>
+</html>
